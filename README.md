@@ -4,7 +4,6 @@
 ## AIM
 To develop a Django application to store and retrieve data from a Movies Database using Object Relational Mapping(ORM).
 
-## ENTITY RELATIONSHIP DIAGRAM
 
 
 
@@ -23,10 +22,30 @@ Enter the code for admin.py and models.py
 Execute Django admin and create details for 10 books
 
 ## PROGRAM
+~~~
+admin.py
 
+from django.contrib import admin
+from .models import Movie,MovieAdmin
+admin.site.register(Movie,MovieAdmin)
 
+models.py
 
-## OUTPUT
+from django.db import models
+from django.contrib import admin
+class Movie(models.Model):
+    car_name=models.CharField()
+    car_model=models.CharField(max_length=100)
+    car_number=models.IntegerField()
+    fuel_type=models.CharField()
+    fc=models.IntegerField()
+
+class MovieAdmin(admin.ModelAdmin):
+    list_display=('car_name','car_model','car_number','fuel_type','fc')
+
+~~~
+## OUTPUT!
+[alt text](<Screenshot 2025-09-18 225251.png>)UT
 
 Include the screenshot of your admin page.
 
